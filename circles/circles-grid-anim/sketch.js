@@ -1,13 +1,14 @@
-let rows = 10
+let rows = 2
 let circles = rows - 1
+const maxRows = 30
 function setup() {
   createCanvas(innerWidth, innerHeight)
-  noLoop()
+  frameRate(15)
 }
 
 function draw() {
   background(0)
-  fill(200)
+  fill(100)
   let cellWidth = width / rows
   let cellHeight = height / rows
   for (let row = 1; row <= circles; row++) {
@@ -18,4 +19,10 @@ function draw() {
       circle(x, y, r)
     }
   }
+  if ((frameCount % (maxRows * 2)) < maxRows) {
+    rows += 1 
+  } else {
+    rows -= 1
+  }
+  circles = rows - 1
 }

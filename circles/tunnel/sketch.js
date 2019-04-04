@@ -1,7 +1,6 @@
 function setup() {
   createCanvas(innerWidth, innerHeight)
   noLoop()
-  // noStroke()
 }
 
 function draw() {
