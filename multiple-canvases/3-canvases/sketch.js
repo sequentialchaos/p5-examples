@@ -43,7 +43,7 @@ const c = new p5 (function(sketch) {
 function label(sketch, name, color) {
   sketch.push()
   sketch.fill(color)
-  sketch.circle(sketch.width / 2, sketch.height / 2, 100)
+  sketch.circle(sketch.width / 2, sketch.height / 2, sketch.width / 4)
   sketch.fill(0)
   sketch.textAlign(sketch.CENTER, sketch.CENTER)
   sketch.textSize(60)
