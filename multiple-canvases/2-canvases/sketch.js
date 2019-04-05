@@ -32,7 +32,7 @@ function label(sketch, name, color) {
   sketch.circle(sketch.width / 2, sketch.height / 2, sketch.width / 4)
   sketch.fill(0)
   sketch.textAlign(sketch.CENTER, sketch.CENTER)
-  sketch.textSize(sketch.width / 12)
+  sketch.textSize(60)
   sketch.text(name, sketch.width / 2, sketch.height / 2)
   sketch.pop()
 }

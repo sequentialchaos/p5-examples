@@ -50,7 +50,7 @@ const d = new p5 (function(sketch) {
 
   sketch.draw = function() {
     sketch.background(70)
-    label(sketch, 'd', 'tomato')
+    frownyFace(sketch)
   }
 }, 'd')
 
@@ -62,5 +62,13 @@ function label(sketch, name, color) {
   sketch.textAlign(sketch.CENTER, sketch.CENTER)
   sketch.textSize(60)
   sketch.text(name, sketch.width / 2, sketch.height / 2)
+  sketch.pop()
+}
+
+function frownyFace(sketch) {
+  sketch.push()
+  sketch.circle(sketch.width / 2, sketch.height / 2, sketch.width / 4)
+  sketch.circle(sketch.width * 0.4, sketch.height * 0.4)
+  sketch.circle(sketch.width * 0.6, sketch.height * 0.4)
   sketch.pop()
 }
