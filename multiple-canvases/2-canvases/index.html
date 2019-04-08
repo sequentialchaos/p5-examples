@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js | 2 Canvases</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+        'a'
+        'b';
+      min-height: 100vh;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    #a {
+      grid-area: a;
+    }
+    #b {
+      grid-area: b;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+  <script src="../../p5/p5.min.js"></script>
+  <script src="../../p5/addons/p5.dom.min.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <div id="a">
+    
+  </div>
+  <div id="b">
+    
+  </div>
+</body>
+
+</html>
