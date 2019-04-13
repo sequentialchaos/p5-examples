@@ -15,13 +15,14 @@ function setup() {
   triangle = new Triangle(a, b, c)
 
   lowerBound = 0
-  upperBound = 10
+  upperBound = 8
 }
 
 function draw() {
-  background(30)
+  background(127)
   translate(width * 0.5, height * 0.5)
   
+  push()
   let colorLimit = 100
   colorMode(HSB, colorLimit)
 
@@ -30,11 +31,12 @@ function draw() {
     fill(hue, colorLimit * 0.7, colorLimit * 0.7)
     sierpinski(triangle, n)
   }
+  pop()
 
   push()
-  fill('white')
-
-  textSize(map(radius, 0, 1000, 24, 80))
+  fill('black')
+  textStyle(BOLD)
+  textSize(map(radius, 0, 1000, 12, 100))
   textAlign(CENTER)
   text("The Sierpinski Triangle", 0, radius * 0.85)
   pop()
