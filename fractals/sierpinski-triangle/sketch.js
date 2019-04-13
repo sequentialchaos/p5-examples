@@ -27,7 +27,6 @@ function draw() {
 
   for (let n = lowerBound; n <= upperBound; n++) {
     let hue = map(n, lowerBound, upperBound, colorLimit * 0.4, colorLimit * 0.9)
-    console.log(hue)
     fill(hue, colorLimit * 0.7, colorLimit * 0.7)
     sierpinski(triangle, n)
   }
