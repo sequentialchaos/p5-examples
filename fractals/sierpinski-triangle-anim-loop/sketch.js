@@ -4,7 +4,7 @@ let n, increment, lowerBound, upperBound;
 
 function setup() {
   createCanvas(innerWidth, innerHeight)
-  frameRate(5)
+  frameRate(1)
 
   radius = min(width, height) * 0.45
 
