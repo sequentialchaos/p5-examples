@@ -1,22 +1,24 @@
-let p;
+let radius;
 let x1, y1, x2, y2, x3, y3;
 
 function setup() {
   createCanvas(innerWidth, innerHeight)
   noLoop()
 
-  p = min(width, height) * 0.06
+  radius_ratio = 0.47
+  radius = min(width, height) * radius_ratio
 
-  x1 = p
-  y1 = height - p
-  x2 = width / 2
-  y2 = p
-  x3 = width - p
-  y3 = height - p
+  x1 = radius * cos(-PI / 2)
+  y1 = radius * sin(-PI / 2)
+  x2 = radius * cos(PI / 6)
+  y2 = radius * sin(PI / 6)
+  x3 = radius * cos(PI * 5 / 6)
+  y3 = radius * sin(PI * 5 / 6)
 }
 
 function draw() {
   background(127)
+  translate(width * 0.50, height * radius_ratio * 1.25)
   tunnel(x1, y1, x2, y2, x3, y3, 12)
 }
 
