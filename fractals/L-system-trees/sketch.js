@@ -73,7 +73,7 @@ function setup() {
   let text = createInput()
   text.input(setRule)
 
-  angle = radians(45)
+  angle = radians(15)
   turtle()
   
   let genButton = createButton("generate")
