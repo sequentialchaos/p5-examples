@@ -11,10 +11,6 @@ class Tree {
   draw() {
     for (let generation of this.generations) {
       let weight = this.trunkWidth * Math.pow(this.widthRatio, generation.number)
-      // console.log('ratio', this.widthRatio)
-      // console.log('width', this.trunkWidth)
-      // console.log('generation', generation.number)
-      // console.log(weight)
       generation.draw(weight)
     }
   }
@@ -70,4 +66,22 @@ class SymmetricTree extends Tree {
     return generation
   }
 
+}
+
+class ColoredTree extends SymmetricTree {
+  constructor(root, angle, ratio, trunkWidth, widthRatio, inDegrees=false, colors=['red', 'orange', 'yellow', 'green','blue', 'indigo', 'violet']) {
+    super(root, angle, ratio, trunkWidth, widthRatio, inDegrees)
+    this.colors = colors
+  }
+
+  draw() {
+    for (let generation of this.generations) {
+      let weight = this.trunkWidth * Math.pow(this.widthRatio, generation.number)
+
+      push()
+      stroke(this.colors[generation.number % this.colors.length])
+      generation.draw(weight)
+      pop()
+    }
+  }
 }
