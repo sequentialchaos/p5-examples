@@ -1,13 +1,10 @@
 let axiom = 'F'
 let sentence = axiom
-let len = 150
+let maxLen = 300
+let len = maxLen
 let angle;
 
 let rules = []
-rules[0] = {
-  a: 'F',
-  b: 'FF[+F-F-F-F+F+F-F-F]'
-}
 
 function generate() {
   len *= 0.5
@@ -54,13 +51,35 @@ function turtle() {
   }
 }
 
+function setRule() {
+  rules[0] = {
+    a: 'F',
+    b: this.value() 
+  }
+}
+
+function reset() {
+  background(50)
+  sentence = axiom
+  len = maxLen
+  turtle()
+}
+
 function setup() {
   createCanvas(800, 640)
   background(30)
-  createP(axiom)
-  angle = radians(25)
-  turtle()
-  let button = createButton("generate")
-  button.mousePressed(generate)
-}
+  createP('Axiom: ' + axiom)
+  createP('Define rule: ')
+  let text = createInput()
+  text.input(setRule)
 
+  angle = radians(45)
+  turtle()
+  
+  let genButton = createButton("generate")
+  genButton.mousePressed(generate)
+
+  let resetButton = createButton("reset")
+  resetButton.mousePressed(reset)
+
+}
