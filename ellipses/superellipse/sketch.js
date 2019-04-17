@@ -1,36 +1,43 @@
-let r, a, b, n;
-let slider;
+let aSlider, bSlider, nSlider;
 
 function setup() {
-  let length = min(innerWidth, innerHeight)
+  createCanvas(innerWidth, innerHeight)
 
-  let canvas = createCanvas(length * 0.7, length * 0.7)
-  canvas.position(innerWidth / 2 - width / 2, innerHeight / 2 - width / 2)
+  frameRate(10)
 
-  let title = createDiv('<h1>Superellipse</h1>')
-  title.position(canvas.position().x, canvas.position().y - height * 0.125)
-  title.style('width', floor(width) + 'px')
-  title.style('text-align', 'center')
+  const header = {
+    x: width * 0.05,
+    y: height * 0.05,
+    width: width * 0.9,
+    height: height * 0.1
+  }
 
-  frameRate(30)
+  let sliderHeight = 20
 
-  slider = createSlider(0.01, 4, 2, 0.01)
-  slider.position(canvas.position().x * 1.015, canvas.position().y * 1.03)
-  slider.size(width * 0.15, 10)
+  nSlider = createSlider(0.01, 4, 2, 0.01)
+  nSlider.position(width * 0.02, height * 0.01)
+  nSlider.size(width * 0.96, sliderHeight)
 
-  r = min(width, height) * 0.49
-  a = r 
-  b = r 
+  aSlider = createSlider(1, width * 0.35, width * 0.35, 1)
+  aSlider.position(width * 0.02, height * 0.04)
+  aSlider.size(width * 0.96, sliderHeight)
+
+  bSlider = createSlider(1, height * 0.35, height * 0.35, 1)
+  bSlider.position(width * 0.02, height * 0.07)
+  bSlider.size(width * 0.96, sliderHeight)
 }
 
 function draw() {
-  background(40)
   translate(width/2, height/2)
+
+  background(40)
   stroke(215)
   strokeWeight(10)
-
   noFill()
-  n = slider.value()
+
+  a = aSlider.value()
+  b = bSlider.value()
+  n = nSlider.value()
   superEllipse(a, b, n, 200)
 }
 
